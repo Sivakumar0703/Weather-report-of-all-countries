@@ -1,3 +1,9 @@
+
+/*
+     line number 117 was commented please uncomment the line and run it.Because i got warning mail from openweather that
+      Girgaurd has detected open weather map token has exposed
+*/
+
 async function countries() {
 
     const collect = fetch('https://restcountries.com/v3.1/all');
@@ -108,11 +114,12 @@ async function findWeather(x) {
     var latlng_data = document.querySelector('.card :nth-child(4)').innerText.split(':')[1]; // fetching the latitude & longitude data from latlng in card
     var lat = latlng_data.split(',')[0].trim(); //seperating latitude from latlng_data
     var lon = latlng_data.split(',')[1]; // seperating longitude from latlng_data
+    //var appid = '8f713c61b539971c03d484fde8371548';
 
     console.log(lat);
     console.log(lon);
 
-    var weather_url = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8f713c61b539971c03d484fde8371548`);
+    var weather_url = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appid}`);
     response2 = await weather_url
     conversion2 = response2.json()
     result2 = await conversion2;
